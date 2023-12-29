@@ -1,6 +1,13 @@
 import FooterLogo from "../../webImages/mainLogo1.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
+  const goTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "none",
+    });
+  };
   return (
     <>
       <footer className="bg-white">
@@ -40,27 +47,26 @@ function Footer() {
             </div>
 
             {/* middle div */}
-            {/* <div className="flex flex-col gap-8 relative">
-              <p className="text-[22px] font-bold footer-main">Our Classes</p>
+            <div className="flex flex-col gap-8 relative">
+              <p className="text-[22px] font-bold footer-main">Company</p>
 
               <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#ff0366]"></span>
-
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Fitness Classes
-              </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Aerobics Classes
-              </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Power Yoga
-              </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Learn Machines
-              </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Full-body Strength
-              </p>
-            </div> */}
+              <Link onClick={goTop} to={"/about"} className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                About Us
+              </Link>
+              <Link onClick={goTop} to={"/services"} className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                Services
+              </Link>
+              <Link onClick={goTop} to={"/gallery/page-1"} className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                Gallery
+              </Link>
+              <Link onClick={goTop} to={"/contact"} className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                Contact
+              </Link>
+              <Link onClick={goTop} to={"/login"} className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                Login
+              </Link>
+            </div>
 
             {/* right div */}
             <div className="flex flex-col gap-8 relative">

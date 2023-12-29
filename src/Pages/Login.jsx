@@ -53,7 +53,7 @@ function Login() {
             </label>
             <input
               className="text-[1.7rem] px-8 py-4 mb-10 w-full outline-[#ff0336] "
-              placeholder="gymTraction@gymail.com"
+              placeholder="demo@gmail.com"
               type="email"
               onChange={(e) => setEmail(e.target.value)}
             ></input>
@@ -75,7 +75,7 @@ function Login() {
               Sign In
             </button>
             <div className="flex gap-4 items-center mt-16 min450:flex-col">
-              <p className="text-white text-[1.5rem]">New to GymTrac?</p>
+              <p className="text-white text-[1.5rem]">Don't have Account?</p>
               <Link
                 to="/signup"
                 className="text-[#ff0336] font-bold text-[1.5rem]"
@@ -83,11 +83,11 @@ function Login() {
                 Sign Up
               </Link>
             </div>
-            <p className="text-[#ffffffbc] text-[1.4rem] mt-3">
+            {/* <p className="text-[#ffffffbc] text-[1.4rem] mt-3">
               <span className="text-[#ff0336]">Test Account</span> -
               gymTraction@gmail.com <span className="text-[#ff0336]"> / </span>
               gym@123
-            </p>
+            </p> */}
           </form>
         </div>
         <Footer />

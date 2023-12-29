@@ -72,11 +72,21 @@ function Navbar() {
         <div className="navlist-nav">
           <NavList />
         </div>
-        <div className="flex items-center gap-10">
+        <div>
+          <ul className="flex gap-9 text-white text-[22px] xl:none font-bold bg-slate-900 p-4 mr-8 rounded-full border-red-600 border">
+          
+            <li
+              style={{ transition: "all 0.3s" }}
+              className=" cursor-pointer hover:text-[#ff0336]"
+            >
+              <Link onClick={goTop} to={"/login"}>
+                Login
+              </Link>
+            </li>
+          </ul>
+        </div>
+        {/* <div className="flex items-center gap-10">
           <div className="flex gap-10">
-            {/* mobile menu -------------- */}
-
-            {/* hamburger menu */}
             <div
               className={`flex top-0 flex-col fixed w-full left-0 h-screen bg-white z-[9999999999] py-[60px] px-[40px] ease-in-out duration-500  ${
                 hamburger ? "left-0" : "-left-[100%]"
@@ -87,7 +97,6 @@ function Navbar() {
                 className="fa-solid fa-xmark text-[#ff0336] text-[3.3rem] cursor-pointer self-end"
               ></i>
 
-              {/* links */}
               <ul className="text-center flex flex-col gap-10 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
                 <li onClick={hamburgerMenu}>
                   <a
@@ -108,13 +117,6 @@ function Navbar() {
                   </Link>
                 </li>
                 <li onClick={hamburgerMenu}>
-                  {/* <Link
-                    onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#ff0336] ease-in duration-200"
-                    to="/schedule/monday"
-                  >
-                    Schedule
-                  </Link> */}
                 </li>
                 <li onClick={hamburgerMenu}>
                   <Link
@@ -126,13 +128,6 @@ function Navbar() {
                   </Link>
                 </li>
                 <li onClick={hamburgerMenu}>
-                  {/* <Link
-                    onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#ff0336] ease-in duration-200"
-                    to="/blog"
-                  >
-                    Blog
-                  </Link> */}
                 </li>
                 <li onClick={hamburgerMenu}>
                   <Link
@@ -144,13 +139,6 @@ function Navbar() {
                   </Link>
                 </li>
                 <li onClick={hamburgerMenu}>
-                  {/* <Link
-                    onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#ff0336] ease-in duration-200"
-                    to="/pricing"
-                  >
-                    Pricing
-                  </Link> */}
                 </li>
                 <li onClick={hamburgerMenu}>
                   <Link
@@ -164,7 +152,6 @@ function Navbar() {
               </ul>
             </div>
 
-            {/* sidebar */}
 
             <div>
               <div
@@ -172,7 +159,6 @@ function Navbar() {
                   sidebar ? "left-0" : "-left-[100%]"
                 }`}
               >
-                {/* logo & X */}
                 <div className="flex justify-between items-center">
                   <img src={LogoSide} alt="logo_img" className="w-[13rem]" />
                   <i
@@ -180,7 +166,6 @@ function Navbar() {
                     className="fa-solid fa-xmark text-[#ff0336] text-[3.3rem] cursor-pointer"
                   ></i>
                 </div>
-                {/* about us */}
                 <div className="flex flex-col gap-6">
                   <h3 className="text-[2rem] font-bold">About Us</h3>
                   <p className="text-[1.6rem] font-medium text-[#000000b1]">
@@ -190,43 +175,6 @@ function Navbar() {
                     a welcoming and supportive environment.
                   </p>
                 </div>
-                {/* gallery */}
-                {/* <div className="flex flex-col gap-6">
-                  <h3 className="text-[2rem] font-bold">Gallery</h3>
-                  <div className="grid grid-cols-3 grid-rows-2 gap-4">
-                    <img
-                      src={SideImg1}
-                      alt="sidebar_gallery"
-                      className="rounded-xl cursor-pointer "
-                    />
-                    <img
-                      src={SideImg2}
-                      alt="sidebar_gallery"
-                      className="rounded-xl cursor-pointer "
-                    />
-                    <img
-                      src={SideImg3}
-                      alt="sidebar_gallery"
-                      className="rounded-xl cursor-pointer "
-                    />
-                    <img
-                      src={SideImg4}
-                      alt="sidebar_gallery"
-                      className="rounded-xl cursor-pointer "
-                    />
-                    <img
-                      src={SideImg5}
-                      alt="sidebar_gallery"
-                      className="rounded-xl cursor-pointer "
-                    />
-                    <img
-                      src={SideImg6}
-                      alt="sidebar_gallery"
-                      className="rounded-xl cursor-pointer "
-                    />
-                  </div>
-                </div> */}
-                {/* contact */}
                 <div className="flex flex-col gap-6">
                   <h3 className="text-[2rem] font-bold">Contact Info</h3>
                   <p className="text-[1.6rem] font-medium text-[#000000b1] hover:text-[#ff0336] cursor-pointer ease-in duration-200">
@@ -242,7 +190,6 @@ function Navbar() {
                     &nbsp; gymTraction@gmail.com
                   </p>
                 </div>
-                {/* follow us */}
                 <div className="flex flex-col gap-6">
                   <h3 className="text-[2rem] font-bold">Follow Us</h3>
                   <div className="flex gap-5">
@@ -260,34 +207,19 @@ function Navbar() {
               </div>
             </div>
 
-            {/* hamburger */}
             <i
               onClick={hamburgerMenu}
               className="fa-bars fa-solid hidden text-white text-4xl cursor-pointer hover:text-[#FF0336] ease-in duration-200"
             ></i>
-            {/* account */}
             <Link onClick={goTop} to="/signup" title="signup_button">
               <i className="fa-regular fa-user  text-white text-4xl cursor-pointer hover:text-[#FF0336] ease-in duration-200"></i>
             </Link>
-            {/* sidebar */}
             <i
               onClick={sideBar}
               className="fa-regular fa-chart-bar text-white text-4xl cursor-pointer hover:text-[#FF0336] ease-in duration-200"
             ></i>
           </div>
-          {/* spin box */}
-          {/* <div className="border-[rgb(255,255,255,0.3)] border-solid border-2  p-2 rounded-md min620:hidden">
-            <Link
-              onClick={goTop}
-              to={"/contact"}
-              onMouseEnter={joinSpin}
-              onMouseLeave={stopSpin}
-              className="flex items-center "
-            >
-            
-            </Link>
-          </div> */}
-        </div>
+        </div> */}
       </nav>
     </>
   );
